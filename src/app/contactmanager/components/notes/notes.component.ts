@@ -11,11 +11,14 @@ import { Note } from '../../models/note';
 })
 export class NotesComponent implements OnInit,AfterViewInit {
 
-  @Input() notes:Note[]|undefined;
+  @Input()
+  notes: Note[] = [];
   displayedColumns: string[] = ['position', 'title', 'date'];
   dataSource!: MatTableDataSource<Note>;
 
-  constructor() { }
+  constructor() {
+    
+   }
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort)
@@ -31,7 +34,7 @@ export class NotesComponent implements OnInit,AfterViewInit {
   }
 
   ngOnInit(): void {
-    this.dataSource! = new MatTableDataSource<Note>(this.notes);
+    this.dataSource = new MatTableDataSource<Note>(this.notes);
   }
 
 }
