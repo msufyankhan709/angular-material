@@ -4,9 +4,9 @@
 <div *ngIf="user">
   <mat-card>
     <mat-card-header>
-        <mat-icon mat-card-avatar svgIcon="{{user.avatar}}"></mat-icon>
+        
         <mat-card-title>
-            <h2>{{user.name}}</h2>
+          <mat-icon>face</mat-icon><h2>{{user.name}}</h2>
         </mat-card-title>
         <mat-card-subtitle>
             Birthday {{user.birthDate | date:'d LLLL'}}
@@ -19,7 +19,9 @@
               {{user.bio}}
             </p>
           </mat-tab>
-          <!-- <mat-tab label="Notes"></mat-tab> -->
+          <mat-tab label="Notes">
+            <app-notes [notes]="user.notes"></app-notes>
+          </mat-tab>
         </mat-tab-group>
       </mat-card-content>
   </mat-card>
