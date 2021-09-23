@@ -1,6 +1,7 @@
 import { Note } from "./note";
 
 export class User {
+    [x: string]: any;
     id: number | undefined;
     birthDate: Date | undefined;
     name: string | undefined;
